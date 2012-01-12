@@ -1,7 +1,8 @@
-/web/bundles/
-/web/imagine/
+/app/config/parameters.ini
+/app/bootstrap*
 /app/cache/*
 /app/logs/*
-/build/
 /vendor/
-app/config/config_*_local.yml
+/web/css/*
+/web/js/*
+/web/bundles/
