@@ -1,0 +1,7 @@
+/web/bundles/
+/web/imagine/
+/app/cache/*
+/app/logs/*
+/build/
+/vendor/
+app/config/config_*_local.yml
