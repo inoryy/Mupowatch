@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <table cellspacing="0">
+        {#<tr id="filter">
+            <td>
+                <input type="text" maxlength="6" size="6" placeholder="Tüüp..." />
+            </td>
+            <td>
+                <input type="text" maxlength="3" size="3" placeholder="№..." />
+            </td>
+            <td>
+                <input type="text" size="15" placeholder="Suund..." />
+            </td>
+            <td>
+                <input type="text" size="15" placeholder="Peatus enne..." />
+            </td>
+            <td>
+                <input type="text" maxlength="10" size="10" placeholder="Aeg..." />
+            </td>
+        </tr>#}
+
+        <tr>
+            <th>{{ paginator.sortable('type', 'report.type')|raw}}</th>
+            <th>{{ paginator.sortable('№', 'report.number')|raw}}</th>
+            <th>{{ paginator.sortable('destination', 'report.destination')|raw}}</th>
+            <th>{{ paginator.sortable('station before', 'report.stationBefore')|raw}}</th>
+            <th>{{ paginator.sortable('time', 'report.datetime')|raw}}</th>
+            <th>&nbsp;</th>
+        </tr>
+        {% if paginator|length > 0 %}
+            {% for report in paginator %}
+                <tr>
+                    <td>{{ report.type|trans }}</td>
+                    <td>{{ report.number }}</td>
+                    <td>{{ report.destination }}</td>
+                    <td>{{ report.stationBefore }}</td>
+                    <td>{{ report.datetime.format('H:i d/m/Y') }}</td>
+                    <td style="width:70px;">
+                        {% if report.datetime|date('d/m') == "now"|date('d/m') or
+                              report.datetime|date('d/m') == "yesterday"|date('d/m') %}
+                            <img data-id="{{ report.id }}" data-vote="1" class="vote" src="{{ asset('/bundles/inorimupowatch/images/vote_up.png') }}" />
+                            <span class="vote_result" style="color:
+                            {% if report.rating > 0 %}green{% else %}red;{% endif %}">
+                                {{ report.rating }}
+                            </span>
+                            <img data-id="{{ report.id }}" data-vote="-1" class="vote" src="{{ asset('/bundles/inorimupowatch/images/vote_down.png') }}" />
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+         <!--<img class="info" title="Info" src="/bundles/inorimupowatch/images/info_03.png" />-->
+    </table>
+   {{ paginator.render()|raw }}
+{% endblock %}

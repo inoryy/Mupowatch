@@ -1,0 +1,22 @@
+; These parameters can be imported into other config files
+; by enclosing the key with % (like %database_user%)
+; Comments start with ';', as in php.ini
+[parameters]
+    admin_pass        = pass
+
+    database_driver   = pdo_mysql
+    database_host     = localhost
+    database_port     =
+    database_name     = symfony
+    database_user     = root
+    database_password =
+
+    locale            = et
+
+    secret            = ThisTokenIsNotSoSecretChangeIt
+
+    ; twitter config
+    consumer_key       = key
+    consumer_secret    = secret
+    oauth_token        = token
+    oauth_token_secret = secret

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}MuPo Watch{% endblock %}</title>
+         {% stylesheets 'bundles/inorimupowatch/css/style.css'
+            filter='cssrewrite, yui_css' output='css/main.css'
+          %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+         {% endstylesheets %}
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+         {% javascripts filter='closure, ?yui_js' output='js/main.js'
+               '@InoriMupoWatchBundle/Resources/public/js/placeholder.js'
+               '@InoriMupoWatchBundle/Resources/public/js/tofsla_forms.js'
+               '@InoriMupoWatchBundle/Resources/public/js/twitter_widget.js'
+               '@InoriMupoWatchBundle/Resources/public/js/jquery.selectBox.js'
+               '@InoriMupoWatchBundle/Resources/public/js/forms.js'
+               '@InoriMupoWatchBundle/Resources/public/js/voting.js'
+         %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    </head>
+
+    <body>
+        <a href="https://github.com/Inori/Mupowatch"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/bec6c51521dcc8148146135149fe06a9cc737577/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+        <div id="container">
+
+            <div id="header">
+                <a href="{{ path('index') }}"><img id="logo" src="{{ asset('/bundles/inorimupowatch/images/logo_03.png') }}" /></a>
+            </div>
+
+            <div id="nav">
+                {{ knp_menu_render('InoriMupoWatchBundle:MainMenuBuilder:mainMenu') }}
+            </div>
+
+            <div id="left">
+                {% block notice %}{% endblock %}
+                {% block content %}{% endblock %}
+            </div>
+            <div id="right">
+                <div id="widget">
+                    <script>
+                    new TWTR.Widget({
+                      version: 2,
+                      type: 'profile',
+                      rpp: 5,
+                      interval: 6000,
+                      width: 270,
+                      height: 300,
+                      theme: {
+                        shell: {
+                          background: '#8ec1da',
+                          color: '#ffffff'
+                        },
+                        tweets: {
+                          background: '#ffffff',
+                          color: '#000000',
+                          links: '#2076c5'
+                        }
+                      },
+                      features: {
+                        scrollbar: false,
+                        loop: true,
+                        live: true,
+                        hashtags: true,
+                        timestamp: true,
+                        avatars: false,
+                        behavior: 'default'
+                      }
+                    }).render().setUser('mupowatch').start();
+                    </script>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+
+        <div id="footer">
+            <p>© MupoWatch, 2011</p>
+        </div>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-18538959-5']);
+            _gaq.push(['_trackPageview']);
+
+            var ajax_transport = '{{ path('ajax_transport') }}';
+            var ajax_destination = '{{ path('ajax_destination') }}';
+            var ajax_station = '{{ path('ajax_station') }}';
+            var ajax_vote = '{{ path('ajax_vote') }}';
+
+            $(function() {
+                $(document).placeholder();
+                $("select").selectBox();
+                TofslaFormsStart();
+
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })
+        </script>
+    </body>
+</html>

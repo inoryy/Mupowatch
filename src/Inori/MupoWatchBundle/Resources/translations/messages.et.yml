@@ -1,0 +1,18 @@
+bus: Buss
+troll: Troll
+tram: Tramm
+type: Tüüp
+destination: Suund
+station before: Peatus enne
+time: Aeg
+prev: Eelmine
+next: Järgmine
+search: Otsi
+add: Lisa
+info: Info
+how: Kuidas töötab
+stats: Statistika
+count: Arv
+report:
+  add:
+    success: 'Teie MuPo info on lisatud. Aitäh!'

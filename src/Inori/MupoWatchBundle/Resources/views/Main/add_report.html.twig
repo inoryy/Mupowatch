@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form 'InoriMupoWatchBundle:Form:fields.html.twig' %}
+
+{% block notice %}
+    <h4>{{ app.session.flash('notice') }}</h4><br />
+{% endblock %}
+
+{% block content %}
+    <form id="add_report" action="" method="POST">
+        {{ form_errors(form) }}
+
+        {{ form_rest(form) }}
+        <input type="submit" value="Lisa" />
+    </form>
+{% endblock %}

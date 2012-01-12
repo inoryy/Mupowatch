@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background: url(../images/bg_01.jpg) repeat-x;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    color: #474747;
+    height: 100%;
+}
+img {border:0;}
+
+a {
+    color: #2076c5;
+}
+
+h1 { font-size: 15px; color: #2076c5;}
+h2 {font-size: 14px; color:#2076c5; font-weight:normal; font-style:italic;margin-top:10px;}
+
+#container {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -40px auto;
+    width: 908px;
+    overflow: auto;
+}
+
+#header {
+    background: url(../images/header_03.png);
+    width: 908px;
+    height: 82px;
+    margin-top: 30px;
+    display: block;
+}
+#logo {
+    width: 266px;
+    height: 46px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#nav {width: 908px; margin-top: 5px;}
+#nav ul {list-style: none; float:left; width: 908px;}
+#nav li {  position:relative; float: left;}
+#nav li a {
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    height: 25px;
+    text-align: center;
+    padding: 5px 15px;
+    min-width: 50px;
+}
+#nav li a:hover {background: #d9edff;}
+#nav li a img {border:0;}
+
+#nav li ul {
+    width: 170px;
+    position: absolute;
+    background: #fff;
+    display: none;
+    color: #2076c5;
+    z-index: 500;
+}
+#nav li ul li {
+    float:none;
+}
+#nav li ul li a {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    min-height: 17px;
+    padding-top: 7px;
+}
+#nav li:hover ul {
+    display: block;
+}
+
+#nav_menu li.current > a {
+    color: #fff;
+    background: #2076c5;
+    text-decoration: none;
+}
+
+#nav_menu li.current_ancestor > a {
+    color: #fff;
+    background: #2076c5;
+    text-decoration: none;
+}
+
+a.selected {
+    color: #fff;
+    background: #2076c5;
+    text-decoration: none;    
+}
+
+#left {
+    margin-top: 25px;
+    float: left;
+    width: 600px;
+}
+#filter {
+    background: #e9f5ff;
+    margin-bottom: 20px;
+}
+#filter td {
+    background: #e9f5ff;
+    border: 0;
+    margin-bottom: 20px;
+}
+.tfInputWrapper {display:inline-block; background: url(../images/forms.png)right -60px no-repeat; padding-right:5px;}
+.tfInputWrapper {zoom:1; *display: inline;}
+.tfInputInner {background: url(../images/forms.png) left top no-repeat; }
+.tfInputInner input {background-color:transparent; border:none; height:20px; padding:2px 0px 1px 5px;font: normal normal 11px/16px Helvetica; vertical-align:top; overflow:hidden; }
+.tfInputWrapper.tfFocus {background-position:right -90px}
+.tfFocus .tfInputInner {background-position:left -30px}	
+input {display:block;}
+
+table {	width: 600px;}
+tr {height: 43px;}
+th {
+    background: #f3f9ff;
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+    border-top: 20px solid #fff;
+    height: 63px;
+}
+th:nth-child(2n) {background: #ecf5ff;}
+th a {text-decoration: none; font-size: 20px;}
+th a:hover {background: #d9edff;}
+td {
+    border-bottom: 1px dotted #d3e7fc;
+    text-align: center;
+}
+td:nth-child(2n) {background: #f7fbff;}
+
+#pagenav {
+    font-size: 12px;
+    color: #000;
+    position: relative;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+#numbers {font-size: 14px; clear:both;}
+#numbers a {display: inline-block; padding: 3px 6px; margin-right: -5px;}
+#numbers a:hover, .next-prev a:hover {background: #d9edff;}
+
+.next-prev {font-size: 12px;}
+.next-prev ul {list-style: none;}
+.next-prev li {display: inline; padding-right: 20px;}
+.next-prev span {font-size: 16px;}
+
+#right {
+    background: #b4e4f5;
+    border: 1px solid #ccc;
+    width: 290px;
+    float: right;
+    margin-top:25px;
+}
+#widget {
+    width: 270px;
+    margin: 10px;
+}
+
+#footer {
+    height: 25px;
+    text-align: center;
+    font-size: 12px;
+    clear: both;
+}
+
+.push {clear: both; height: 60px; width: 908px;}
+.info {
+    width: 45px;
+}
+.info img {padding-bottom: -5px; width: 18px;}
+
+
+label {float: left; width: 150px; text-align: right; margin-right: 15px;}
+p {margin-top: 10px;}
+
+.tofslaControl *:focus {outline: 0px;}
+
+/*Firefox hack*/
+button::-moz-focus-inner {border : 0px;}
+
+.tfHidden {display: none !important}
+.tfDisabled, .tfDisabled *{ background:none !important; background-color:#d4d0c8 !important; color:#808080 !important; cursor:default !important} 
+
+
+
+/*== buttons ==*/
+button.tofslaApplied {padding:0px; margin-top: 25px; margin-left: 162px; border:none; cursor: pointer; background-color: transparent; font: bold normal 16px Verdana; color:#FFFFFF; letter-spacing:normal; height:34px; min-width:70px;}
+button.tofslaApplied{overflow: visible;} /* needed for IE6, IE7 */
+button.tofslaApplied span {display: block; background-image: url(../images/button.png); background-position:right -102px; background-repeat:no-repeat; height:34px; padding:0px 4px 0px 0px; min-width:70px; }
+button.tofslaApplied span span {padding:0px 2px 0px 6px; background-position:left 0px; line-height:29px; white-space:nowrap; float:left;}
+button.tofslaApplied.tfHover span {background-position:right -136px;}
+button.tofslaApplied.tfHover span span {background-position:left -34px; }
+button.tofslaApplied.tfActive span {background-position:right -170px;}
+button.tofslaApplied.tfActive span span {background-position:left -68px; }
+button.tfDisabled{text-shadow:none; font-weight:normal}
+
+/*== textareas ==*/
+.tfTextAreaWrapper textarea{width:117px; height:100px; margin:0px; background-color:transparent; overflow:auto; border:none; height:90px; font: normal normal 12px Helvetica; z-index:1; position:relative}
+
+.tfTextAreaWrapper{ display:inline-block; margin:0 auto 5px 4px;}
+.tfTextAreaWrapper{zoom:1; *display: inline;} /* IE6, IE7 hack */
+
+.tfTextAreaInnerWrapper{padding:6px 5px 2px 0; position:relative; z-index:2}
+* html .tfTextAreaInnerWrapper{zoom:1; *display: inline;} /* IE6 hack */
+
+.tfTextAreaInnerWrapper, .tfTextAreaTop, .tfTextAreaBottom, .tfTextAreaBottom div{ background:url(../images/textarea.png) right top no-repeat}
+.tfTextAreaTop{background-position:left top; height:100%; left:0; margin-left:-5px; position:absolute; top:0; width:5px;}
+
+.tfTextAreaBottom{background-position:right bottom; position:relative; width:100%; display:block; z-index:-1}
+
+.tfTextAreaBottom, .tfTextAreaBottom div{font-size:1px; height:3px;}
+.tfTextAreaBottom div{background-position:left bottom; margin-left:-5px; position:relative; width:5px; }
+
+* html .tfTextAreaTop{height: expression( this.parentNode.offsetHeight + 'px' );} /* IE6 hack */
+.tfTextAreaBottom{*width: expression( this.previousSibling.offsetWidth + 'px' );} /* IE6, IE7 hack */
+*+html .tfTextAreaBottom{ margin-right:-5px}/* IE7 hack */
+*+html .tfTextAreaInnerWrapper{ padding-left:5px}/* IE7 hack */
+
+/*== selects ==*/
+.tfSelectWrapper {position: relative; display:inline-block; letter-spacing:normal; vertical-align:middle; min-width: 125px; /* width: 129px; -- set this if you change please_CalculateSelectWidth to "false" */}
+.tfSelectWrapper{zoom:1; *display: inline;}	/* IE6, IE7 hack */
+.tfSelectWrapper div{min-height:30px}
+* html .tfSelectWrapper div{ height:30px}	/* IE6 hack */
+.tfSelectWrapper div span {display:block; position: absolute; padding-left: 10px; padding-top: 5px; overflow: hidden; height: 30px; background: url(../images/select.png) no-repeat; left:0px; text-align:left; cursor:pointer; font: normal normal 12px Verdana; line-height:19px; width: 101px; /* width: 101px; -- set this if you change please_CalculateSelectWidth to "false" */}
+.tfSelectWrapper div a {display: block; position: absolute; right: 0px; background:url(../images/select.png) right top no-repeat ; width: 25px; height: 30px; cursor:pointer}
+.tfSelectWrapper ul {display: none; position: absolute; top: 30px; left: 0px; overflow-y: auto; padding:0px 0px 1px 0px; margin: 0px; list-style-type: none; background:#fff; z-index:100; border:1px solid #d9edff; border-top:none; overflow-x: hidden; min-height:0px; max-height:108px; width: 123px; /* width: 127px; -- set this if you change please_CalculateSelectWidth to "false" */}
+
+* html .tfSelectWrapper ul { height: 108px; } /* IE6 hack */
+
+.tfSelectWrapper ul li{ display:block; padding:0px 1px !important; margin:0px !important; background:none !important; float:none !important;  }
+
+.tfSelectWrapper ul a {display: block; padding-right: 3px; padding-left: 8px; text-decoration: none; text-align:left; font: normal normal 12px Helvetica; color:#474747; background-color:#fff; line-height:19px !important;}
+
+:root *> .tfSelectWrapper ul a:hover {background-color:#d9edff; text-decoration:none; font-style:normal; color:#474747; } /* everything but IE6, IE7, IE8 */
+.tfSelectWrapper ul a.hover {background-color:#d9edff; font-style:normal; color:#474747;} /* needed for IE6, IE7, IE8 */
+
+.tfSelectWrapper ul a.selected {background-color:#d9edff; color:#474747;}
+
+#report_datetime_time {
+    margin-left: 165px;
+}
+
+.field_error {
+    margin-left: 150px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Dropdown control */
+.selectBox-dropdown {
+	width: 85px; /* width = (desired width) - padding-right */
+        margin-bottom: 10px;
+	padding-right: 45px;
+	position: relative;
+	border: solid 1px #BBB;
+	line-height: 1.5;
+	text-decoration: none;
+	color: #000;
+	outline: none;
+	vertical-align: middle;
+        background:url(../images/select.png) right top no-repeat ;
+/*	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F8F8F8', endColorstr='#E1E1E1', GradientType=0);
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .75);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .75);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .75);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;*/
+	display: inline-block;
+	cursor: default;
+}
+
+.selectBox-dropdown:focus,
+.selectBox-dropdown:focus .selectBox-arrow {
+	border-color: #666;
+}
+
+.selectBox-dropdown.selectBox-menuShowing {
+	-moz-border-radius-bottomleft: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-bottom-left-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.selectBox-dropdown .selectBox-label {
+	width: 100%;
+	padding: .2em .3em;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.selectBox-dropdown .selectBox-arrow {
+/*	position: absolute;
+	top: 0;
+	right: 0;
+	width: 23px;
+	height: 100%;
+	background: url(jquery.selectBox-arrow.gif) 50% center no-repeat;
+	border-left: solid 1px #BBB;*/
+        display:none;
+}
+
+
+/* Dropdown menu */
+.selectBox-dropdown-menu {
+	position: absolute;
+	z-index: 99999;
+	max-height: 200px;
+	border: solid 1px #BBB; /* should be the same border width as .selectBox-dropdown */
+	background: #FFF;
+	-moz-box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+	overflow: auto;
+}
+
+
+/* Inline control */
+.selectBox-inline {
+	width: 250px;
+	outline: none;
+	border: solid 1px #BBB;
+	background: #FFF;
+	display: inline-block;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	overflow: auto;
+}
+
+.selectBox-inline:focus {
+	border-color: #666;
+}
+
+
+/* Options */
+.selectBox-options,
+.selectBox-options LI,
+.selectBox-options LI A {
+	list-style: none;
+	display: block;
+	cursor: default;
+	padding: 0;
+	margin: 0;
+}
+
+.selectBox-options LI A {
+	line-height: 1.5;
+	padding: 0 .5em;
+	white-space: nowrap;
+	overflow: hidden;
+	background: 6px center no-repeat;
+}
+
+.selectBox-options LI.selectBox-hover A {
+	background-color: #EEE;
+}
+
+.selectBox-options LI.selectBox-disabled A {
+	color: #888;
+	background-color: transparent;
+}
+
+.selectBox-options LI.selectBox-selected A {
+	background-color: #C8DEF4;
+}
+
+.selectBox-options .selectBox-optgroup {
+	color: #666;
+	background: #EEE;
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 0 .3em;
+	white-space: nowrap;
+}

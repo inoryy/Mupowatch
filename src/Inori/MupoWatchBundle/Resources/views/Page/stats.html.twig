@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <table cellspacing="0">
+        <tr>
+            <th>{{ 'type'|trans }}</th>
+            <th>{{ '№' }}</th>
+            <th>{{ 'destination'|trans }}</th>
+            <th>{{ 'station before'|trans }}</th>
+            <th>{{ 'count'|trans }}</th>
+        </tr>
+        {% for report in reports %}
+            <tr>
+                <td>{{ report.0.type|trans }}</td>
+                <td>{{ report.0.number }}</td>
+                <td>{{ report.0.destination }}</td>
+                <td>{{ report.0.stationBefore }}</td>
+                <td>{{ report.ct }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,37 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        in_memory:
+            users:
+                admin: { password: %admin_pass%, roles: [ 'ROLE_ADMIN' ] }
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login:
+            pattern:  ^/admin/login$
+            security: false
+
+        secured_area:
+            pattern:    ^/admin/
+            provider:   in_memory
+            form_login:
+                check_path: /admin/login_check
+                login_path: /admin/login
+            logout:
+                path:   /admin/logout
+                target: /
+            #anonymous: ~
+            http_basic:
+                realm: "Secured MupoWatch Area"
+
+    access_control:
+        - { path: /admin, roles: ROLE_ADMIN }

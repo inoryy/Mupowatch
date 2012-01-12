@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="inori_mupowatch.admin.report" class="Inori\MupoWatchBundle\Admin\ReportAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Admin" label="Report" />
+            <argument />
+            <argument>Inori\MupoWatchBundle\Entity\Report</argument>
+            <argument />
+            <argument type="service" id="twitter_app" />
+            <argument type="service" id="translator" />
+        </service>
+        
+    </services>
+
+</container>

@@ -1,0 +1,15 @@
+inori_mupowatch_login:
+    pattern:  /admin/login
+    defaults: { _controller: InoriMupoWatchBundle:Secured:login }
+    
+_security_check:
+    pattern:  /admin/login_check
+    defaults: { _controller: InoriMupoWatchBundle:Secured:securityCheck }
+    
+inori_mupowatch_logout:
+    pattern:  /admin/logout
+    defaults: { _controller: InoriMupoWatchBundle:Secured:logout }
+    
+inori_mupowatch_secured:
+    pattern:  /admin
+    defaults: { _controller: InoriMupoWatchBundle:Secured:index }

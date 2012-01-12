@@ -1,0 +1,6 @@
+<ul>
+    {% for report in reports %}
+        <li>{{ report.type }} # {{ report.number }} - peale {{ report.stationBefore }}, {{ report.destination }} suunaga @ {{ report.datetime.format('H:i d/m/Y') }}</li>
+    {% endfor %}
+</ul>
+

@@ -1,0 +1,18 @@
+mupo_watch_app:
+    resource: "@InoriMupoWatchBundle/Controller/AppController.php"
+    type:     annotation
+
+mupo_watch_main:
+    resource: "@InoriMupoWatchBundle/Controller/MainController.php"
+    type:     annotation
+
+mupo_watch_ajax:
+    resource: "@InoriMupoWatchBundle/Controller/AJAXController.php"
+    type:     annotation
+
+mupo_watch_page:
+    resource: "@InoriMupoWatchBundle/Controller/PageController.php"
+    type:     annotation
+
+mupo_watch_secured:
+    resource: "@InoriMupoWatchBundle/Resources/config/routing_secured.yml"

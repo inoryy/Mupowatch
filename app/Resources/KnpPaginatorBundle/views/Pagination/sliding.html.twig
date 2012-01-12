@@ -1,0 +1,39 @@
+{% if pageCount > 1 %}
+<div id="pagenav">
+    <ul class="next-prev">
+        <li>
+            <span>←&nbsp;</span>
+            {% if previous is defined %}
+            <a class="forward" href="{{ path(route, query|merge({'page': previous})) }}">{{ 'prev'|trans }}</a>
+            {% else %}
+            {{ 'prev'|trans }}
+            {% endif %}
+        </li>
+        <li>
+            {% if next is defined %}
+            <a class="forward" href="{{ path(route, query|merge({'page': next})) }}">{{ 'next'|trans }}</a>
+            {% else %}
+            {{ 'next'|trans }}
+            {% endif %}
+            <span>&nbsp;→</span>    
+        </li>
+    </ul>
+    <div id="numbers">
+        {% if first is defined and current != first %}
+            <a title="First page" href="{{ path(route, query|merge({'page': first})) }}">←</a>
+        {% endif %}
+            
+        {% for page in pagesInRange %}
+            {% if page != current %}
+                    <a href="{{ path(route, query|merge({'page': page})) }}">{{ page }}</a>
+            {% else %}
+                <a class="selected" href="#">{{ page }}</a>
+            {% endif %}
+        {% endfor %}
+                
+        {% if last is defined and current != last %}
+            <a title="Last page" href="{{ path(route, query|merge({'page': last})) }}">→</a>
+        {% endif %}
+    </div>
+</div> 
+{% endif %}

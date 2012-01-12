@@ -1,0 +1,9 @@
+{% extends "InoriMupoWatchBundle::layout.html.twig" %}
+
+{% block title "Symfony Security Tutorial" %}
+
+{% block security %}
+    logged in as <strong>{{ app.user ? app.user.username : 'Anonymous' }}</strong>
+    <br/>
+    <a href="{{ path('knp_ipsum_logout') }}">Logout</a>
+{% endblock %}
