@@ -19,70 +19,70 @@ class Report
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-    
+
     /**
      * @ORM\Column(type="integer")
-     * 
+     *
      * @Assert\NotBlank()
      * @Assert\MinLength(1)
      * @Assert\Regex(pattern="{[^0]+$}", message="Number peaks olema valitud")
      * Add this after adjusting error styling Assert\Type(type="integer")
      */
     protected $number;
-    
+
     /**
      * @ORM\Column(type="string", length="50")
-     * 
+     *
      * @Assert\Choice({"bus", "troll", "tram"})
      */
     protected $type;
-    
+
     /**
      * @ORM\Column(type="string", length="50")
-     * @Assert\Regex(pattern="{[^0]+$}", message="Sihtpunkt peaks olema valitud") 
+     * @Assert\Regex(pattern="{[^0]+$}", message="Sihtpunkt peaks olema valitud")
      * @Assert\NotBlank()
      */
-    protected $destination;  
-    
+    protected $destination;
+
     /**
      * @ORM\Column(type="string", length="50", name="station_before")
-     * @Assert\Regex(pattern="{[^0]+$}", message="Peatus peaks olema valitud") 
+     * @Assert\Regex(pattern="{[^0]+$}", message="Peatus peaks olema valitud")
      * @Assert\NotBlank()
      */
-    protected $stationBefore; 
-    
+    protected $stationBefore;
+
     /**
      * @ORM\Column(type="string", length="255", nullable="true")
      */
     protected $info;
-    
+
     /**
      * @ORM\Column(type="datetime")
-     * 
+     *
      * @Assert\Time()
      */
     protected $datetime;
-    
+
     /**
      * @ORM\Column(type="boolean")
      */
-    protected $approved;    
-    
+    protected $approved;
+
     /**
      * @ORM\Column(type="bigint")
      */
-    protected $tweeted; 
-    
+    protected $tweeted;
+
     /**
      * @ORM\OneToMany(targetEntity="ReportVote", mappedBy="report")
      */
     protected $votes;
-    
+
     /**
      * @ORM\Column(type="integer")
      */
     protected $rating;
-    
+
     /**
      * @var \DateTime
      *
@@ -97,8 +97,8 @@ class Report
      * @ORM\Column(name="updated_at", type="datetime")
      * @Gedmo\Timestampable(on="update")
      */
-    protected $updatedAt;    
-    
+    protected $updatedAt;
+
     public function __construct()
     {
         $this->datetime = new \DateTime();
@@ -108,7 +108,7 @@ class Report
         $this->votes = new ArrayCollection();
         $this->rating = 0;
     }
-    
+
     public function setData($data)
     {
         $this->number = $data['number'];
@@ -202,8 +202,8 @@ class Report
             $datetime->setDate(date('Y'), date('m'), date('d'));
         } else {
             $datetime->setDate(date('Y'), date('m'), date('d') - 1);
-        }            
-        
+        }
+
 
         $this->datetime = $datetime;
     }
@@ -211,7 +211,7 @@ class Report
     /**
      * Get datetime
      *
-     * @return datetime $datetime
+     * @return \DateTime $datetime
      */
     public function getDatetime()
     {
@@ -311,7 +311,7 @@ class Report
     /**
      * Get approved
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getApproved()
     {
@@ -331,7 +331,7 @@ class Report
     /**
      * Get tweeted
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getTweeted()
     {
@@ -351,7 +351,7 @@ class Report
     /**
      * Get votes
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getVotes()
     {
@@ -371,7 +371,7 @@ class Report
     /**
      * Get rating
      *
-     * @return integer 
+     * @return integer
      */
     public function getRating()
     {

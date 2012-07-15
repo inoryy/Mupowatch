@@ -14,5 +14,9 @@ mupo_watch_page:
     resource: "@InoriMupoWatchBundle/Controller/PageController.php"
     type:     annotation
 
+mupo_watch_api:
+    resource: "@InoriMupoWatchBundle/Controller/ApiController.php"
+    type:     annotation
+
 mupo_watch_secured:
     resource: "@InoriMupoWatchBundle/Resources/config/routing_secured.yml"
