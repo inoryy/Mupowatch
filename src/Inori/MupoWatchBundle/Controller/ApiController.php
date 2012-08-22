@@ -36,7 +36,7 @@ class ApiController extends Controller
             /* @var $result \Inori\MupoWatchBundle\Entity\Report */
 
             $reports[] = array(
-                'datetime'       => $result->getDatetime()->format('d-m-y h:i:s'),
+                'datetime'       => $result->getDatetime()->format('d-m-y H:i:s'),
                 'rating'         => $result->getRating(),
                 'destination'    => $result->getDestination(),
                 'station_before' => $result->getStationBefore(),
